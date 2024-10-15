@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Red Door
+  - RedKeyCard
   layers:
   - Default
   - TransparentFX
