@@ -8463,6 +8463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upfloat: 0.5
   floatSpeed: 1
+  popSound: {fileID: 0}
 --- !u!135 &1192104253
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13883,6 +13884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upfloat: 0.3
   floatSpeed: 0.5
+  popSound: {fileID: 8300000, guid: c1faf01f9f69d5e4ba8732e4f090fa81, type: 3}
 --- !u!1 &2000768954
 GameObject:
   m_ObjectHideFlags: 0
