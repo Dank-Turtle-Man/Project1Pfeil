@@ -10778,6 +10778,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: yeet baby test rocket
       objectReference: {fileID: 0}
+    - target: {fileID: 1134071928534266, guid: 44e4bc9b92cc5d94bae579cb51efda9e, type: 3}
+      propertyPath: m_TagString
+      value: Rocket
+      objectReference: {fileID: 0}
     - target: {fileID: 4254650028842916, guid: 44e4bc9b92cc5d94bae579cb51efda9e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.05

@@ -7,6 +7,7 @@ TagManager:
   - Red Door
   - RedKeyCard
   - BlueKeyCard
+  - Rocket
   layers:
   - Default
   - TransparentFX
