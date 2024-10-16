@@ -26,7 +26,7 @@ public class BalloonFloat : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        Destroy(collision.gameObject);
+        Destroy(this.gameObject);
         audioSource.PlayOneShot(popSound);
     }
 }
