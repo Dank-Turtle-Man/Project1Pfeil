@@ -14,6 +14,8 @@ public class BalloonFloatPop: MonoBehaviour
     void Start()
     {
         originalPosition = transform.position; // Save the initial position
+        audioSource = GetComponent<audioSource>();
+        audioSource.clip = popSound;
     }
 
     // Update is called once per frame
@@ -27,13 +29,13 @@ public class BalloonFloatPop: MonoBehaviour
     // Detecing Collision with object
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Rocket"))
+        if (audioSource != null)
         {
             //play sound
-            audioSource.PlayOneShot(popSound);
-
-            // destory the balloon after the sound is played
-            Destroy(gameObject, popSound.length);
+            audioSource.Play();
         }
+            // destory the balloon after the sound is played
+            Destroy(this.gameObject, audioSource.clip.length);
+        
     }
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BalloonFloat : MonoBehaviour
 {
-    public float upfloat = 0.5f; // Strength of the floating effect
-    public float floatSpeed = 1.0f; // Speed of the up and down motion
+    public float upfloat = 0.3f; // Strength of the floating effect
+    public float floatSpeed = 0.5f; // Speed of the up and down motion
     public AudioClip popSound; //pop sound of balloon
 
     private Vector3 originalPosition;
@@ -14,6 +14,11 @@ public class BalloonFloat : MonoBehaviour
     void Start()
     {
         originalPosition = transform.position; // Save the initial position
+        audioSource = GetComponent<audioSource>();
+        if (audioSource == null)
+        {
+            Debug.LogError("AudioSource component missing on balloon")
+        }
     }
 
     // Update is called once per frame
@@ -26,7 +31,14 @@ public class BalloonFloat : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        Destroy(this.gameObject);
-        audioSource.PlayOneShot(popSound);
+        
+        if (audioSource !=null && popSound != null)
+        {
+
+        audioSource.PlayOneShot(popSound); // Play sound
+
+        }
+        Destroy(this.gameObject, popSound.length); // Destory after sound
+        
     }
 }
