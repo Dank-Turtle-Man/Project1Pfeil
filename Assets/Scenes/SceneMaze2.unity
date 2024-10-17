@@ -17284,7 +17284,7 @@ MonoBehaviour:
   upfloat: 0.3
   floatSpeed: 0.5
   popParticle: {fileID: 7021432036779780745, guid: a63085119c7b88f49b56926ef364aa08, type: 3}
-  redkeycard: {fileID: 2797854322055855213, guid: f756d48bffceb534597fb9f630c614b9, type: 3}
+  redkeycard: {fileID: 2175768607365797889, guid: f788f31125d392b4ebdffb4061f1aecf, type: 3}
 --- !u!1 &1934710129
 GameObject:
   m_ObjectHideFlags: 0
