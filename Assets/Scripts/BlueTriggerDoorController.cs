@@ -14,6 +14,7 @@ public class BlueTriggerDoorController : MonoBehaviour
             if(openTrigger){
                 myDoor.Play("Door open", 0, 0.0f);
                 doorOpenSound.PlayDelayed(delay);
+                Destroy(other.gameObject);
                 gameObject.SetActive(false);
             }
         }
