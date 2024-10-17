@@ -10,6 +10,8 @@ public class BalloonFloat : MonoBehaviour
     private Vector3 originalPosition;
     private AudioSource audioSource;
 
+    [SerializeField] ParticleSystem popParticle = null;
+
     void Start()
     {
         originalPosition = transform.position;
@@ -24,7 +26,11 @@ public class BalloonFloat : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        audioSource.PlayOneShot(audioSource.clip);
+        
+
+        Destroy(collision.gameObject);
         Destroy(gameObject, audioSource.clip.length);
+        audioSource.PlayOneShot(audioSource.clip);
+        popParticle.Play();
     }
 }
