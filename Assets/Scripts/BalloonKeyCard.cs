@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class BalloonKeyCard : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class BalloonKeyCard : MonoBehaviour
     }
 
     // Detecting collision with an object
-    private void OnCollisionEnter(Collision collision)
+     void OnCollisionEnter(Collision collision)
     {
         // Play the pop sound
         audioSource.Play();
@@ -37,26 +38,30 @@ public class BalloonKeyCard : MonoBehaviour
         Destroy(collision.gameObject);
 
         // Spawn the red keycard after the sound plays and balloon is destroyed
+        popParticle.Play();
         StartCoroutine(HandleBalloonPop());
+        
     }
 
     // Coroutine to handle sound playing and spawning the keycard
-    private IEnumerator HandleBalloonPop()
+     IEnumerator HandleBalloonPop()
     {
         // Wait for the audio clip to finish
         yield return new WaitForSeconds(audioSource.clip.length);
 
         // Play the particle effect before destroying the balloon
-        if (popParticle != null)
+       /*if (popParticle != null)
         {
             popParticle.Play();
-        }
+        }*/
 
         // Spawn the red keycard at balloon
         Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         Instantiate(redkeycard, spawnPosition, Quaternion.identity);
 
         // Destroy the balloon after the sound has finished playing
+        
         Destroy(this.gameObject);
+        
     }
 }
